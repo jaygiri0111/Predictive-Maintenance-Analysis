@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
 import joblib  # Replace pickle with joblib
+import os 
 
 
 # Function to Load the CatBoost Model
