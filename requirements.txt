@@ -1,4 +1,4 @@
-catboost==1.2.7
-joblib==1.1.0
-numpy==1.19.5
+catboost== 1.2.7
+joblib==1.4.2
+numpy== 1.26.4
 streamlit==1.41.1  # Include your Streamlit version if you're using it
