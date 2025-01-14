@@ -87,7 +87,7 @@ import joblib  # Replace pickle with joblib
 @st.cache_resource
 def load_model():
     # Load the CatBoost model using joblib
-    model = joblib.load('C:/Users/KIIT01/Desktop/predictive-maintenace-Analysis/predictive_analysis_model.pkl')
+    model = joblib.load('predictive_analysis_model.pkl')
     return model
 
 
