@@ -79,7 +79,7 @@
 #     main()
 
 import streamlit as st
-import numpy as np
+import numpy as np`
 import joblib  # Replace pickle with joblib
 
 
