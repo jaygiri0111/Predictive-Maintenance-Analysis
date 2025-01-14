@@ -4,7 +4,7 @@ import joblib  # Replace pickle with joblib
 import os 
 
 
-Function to Load the CatBoost Model
+#Function to Load the CatBoost Model
 def load_model():
     model_path = 'predictive_analysis_model.pkl'
     if os.path.exists(model_path):
