@@ -4,21 +4,21 @@ import joblib  # Replace pickle with joblib
 import os 
 
 
-# Function to Load the CatBoost Model
-# def load_model():
-#     model_path = 'predictive_analysis_model.pkl'
-#     if os.path.exists(model_path):
-#         model = joblib.load(model_path)
-#         return model
-#     else:
-#         st.error(f"Model file '{model_path}' not found!")
-#         return None
-
-@st.cache_resource
+Function to Load the CatBoost Model
 def load_model():
-    # Load the CatBoost model using joblib
-    model = joblib.load('predictive_analysis_model.pkl')
-    return model
+    model_path = 'predictive_analysis_model.pkl'
+    if os.path.exists(model_path):
+        model = joblib.load(model_path)
+        return model
+    else:
+        st.error(f"Model file '{model_path}' not found!")
+        return None
+
+# @st.cache_resource
+# def load_model():
+#     # Load the CatBoost model using joblib
+#     model = joblib.load('predictive_analysis_model.pkl')
+#     return model
 
 
 # Function to Map Failure Types
