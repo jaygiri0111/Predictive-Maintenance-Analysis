@@ -1,4 +1,4 @@
-streamlit
-numpy
-catboost
-joblib
+catboost==0.26
+joblib==1.1.0
+numpy==1.19.5
+streamlit==1.18.0  # Add your streamlit version if you're using it
