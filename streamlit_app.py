@@ -88,18 +88,24 @@
 #     main()
 import streamlit as st
 import numpy as np
-import joblib  # Replace pickle with joblib
 import os
-
+import pickle  # Use pickle instead of joblib
 
 # Function to Load the CatBoost Model
 def load_model():
     model_path = 'predictive_analysis_model.pkl'
     if os.path.exists(model_path):
         try:
-            # Attempt to load the model
-            model = joblib.load(model_path)
+            # Attempt to load the model with pickle
+            with open(model_path, 'rb') as f:
+                model = pickle.load(f)
             return model
+        except ImportError as e:
+            st.error(f"ImportError: {e}. This could be due to a missing or incompatible dependency.")
+            return None
+        except ValueError as e:
+            st.error(f"ValueError: {e}. This could be due to a binary compatibility issue between libraries.")
+            return None
         except Exception as e:
             st.error(f"Error loading model: {e}")
             return None
@@ -173,6 +179,7 @@ def main():
             predicted_label = failure_type_mapping.get(prediction.item(), "Unknown Failure Type")
 
             st.success(f"Predicted Failure Type: {predicted_label}")
+
 
 if __name__ == '__main__':
     main()
